@@ -82,12 +82,12 @@ function updateCharacterCount() {
     const charCount = document.getElementById('charCount');
     const currentLength = chatInput.value.length;
     
-    charCount.textContent = `${currentLength}/500`;
+    charCount.textContent = `${currentLength}/1500`;
     
     // Change color if approaching limit
-    if (currentLength > 450) {
+    if (currentLength > 1350) {
         charCount.style.color = '#d32f2f';
-    } else if (currentLength > 400) {
+    } else if (currentLength > 1200) {
         charCount.style.color = '#f57c00';
     } else {
         charCount.style.color = '#666';
