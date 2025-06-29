@@ -234,14 +234,13 @@ p {
     background: linear-gradient(135deg, #f8f5f0 0%, #e8dcc0 100%);
 }
 
-.pricing-characters {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+/* Centered Snarky Image */
+.pricing-snarky-centered {
+    text-align: center;
     margin-bottom: 2rem;
 }
 
-.pricing-characters img {
+.character-snarky-centered {
     width: 120px;
     height: auto;
     border-radius: 10px;
@@ -249,30 +248,69 @@ p {
 }
 
 .pricing-dialogue {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 3rem;
 }
 
+/* Dialogue Row Layout */
+.dialogue-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.thump-row {
+    justify-content: flex-start;
+}
+
+.wynn-row {
+    justify-content: flex-end;
+}
+
+/* Inline Character Images */
+.character-inline {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.thump-inline {
+    order: 1;
+}
+
+.wynn-inline {
+    order: 2;
+}
+
+/* Dialogue Bubbles */
 .dialogue-bubble {
-    margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 70%;
 }
 
 .thump-bubble {
     background: #90EE90;
-    margin-right: 20%;
+    border-radius: 5px 20px 20px 20px;
+    order: 2;
 }
 
 .wynn-bubble {
     background: #FFB6C1;
-    margin-left: 20%;
+    border-radius: 20px 5px 20px 20px;
+    order: 1;
 }
 
 .snarky-bubble {
     background: #e8dcc0;
-    margin: 0 10%;
+    margin: 2rem auto 0;
+    max-width: 80%;
+    text-align: center;
+    border-radius: 20px;
 }
 
 .pricing-options {
@@ -504,30 +542,39 @@ p {
         grid-template-columns: 1fr;
     }
     
-    .pricing-characters {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .pricing-characters img {
-        width: 80px;
-    }
-    
     .character-thumbnails {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
     
+    /* Mobile dialogue adjustments */
+    .dialogue-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .thump-row,
+    .wynn-row {
+        justify-content: center;
+    }
+    
     .dialogue-bubble {
-        margin: 0.5rem 0;
+        max-width: 90%;
+        text-align: center;
     }
     
     .thump-bubble,
-    .wynn-bubble,
-    .snarky-bubble {
-        margin-left: 0;
-        margin-right: 0;
+    .wynn-bubble {
+        border-radius: 20px;
+        order: 2;
+    }
+    
+    .character-inline {
+        order: 1;
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -557,6 +604,15 @@ p {
     #sendButton {
         align-self: flex-end;
         width: auto;
+    }
+    
+    .character-inline {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .character-snarky-centered {
+        width: 100px;
     }
 }
 
