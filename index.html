@@ -1,35 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snarkbot Landing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snarkbot Landing</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <h1>Welcome to Snarkbot!</h1>
-  <p>Enjoy a free trial of 30 minutes to explore the features.</p>
+    <!-- Page content here -->
 
-  <div id="chatbot">
-    <p>Well hello there! <em>adjusts worn dinner jacket</em> I'm Antknee B. Snarky, though most folks just call me Snark. Welcome to my little corner of the forest! I've got to tell you - I've never met an ordinary person, no Sir'ee bob! Not once! So, what brings you wandering into Stumpwood Village today?</p>
-  </div>
-
-  <script>
-    const apiBaseUrl = "https://school-of-snark.vercel.app/api";
-
-    async function sendMessage(message) {
-      const response = await fetch(`${apiBaseUrl}/chat`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
-      const data = await response.json();
-      return data.reply;
-    }
-
-    // Example usage
-    sendMessage("Hello Snark!").then(reply => {
-      console.log("Snarkbot says:", reply);
-    });
-  </script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
