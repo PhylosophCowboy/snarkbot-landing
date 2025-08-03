@@ -1,1 +1,663 @@
-/* Please provide the content of your local assets/css/styles.css file so I can create or update it in the repository. */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #2c1810;
+    background-color: #f8f5f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #654321;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #654321;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f5f0 0%, #e8dcc0 100%);
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.character-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-headline {
+    color: #8B4513;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-subhead {
+    font-size: 1.3rem;
+    color: #654321;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.hero-hook {
+    font-size: 1.2rem;
+    color: #2c1810;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Chat Section */
+.chat-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f8f5f0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.timer-display {
+    margin-left: auto;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: white;
+}
+
+.message {
+    margin-bottom: 1.5rem;
+}
+
+.snarky-message .message-content {
+    background: #e8dcc0;
+    padding: 1rem 1.5rem;
+    border-radius: 20px 20px 20px 5px;
+    max-width: 80%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-message .message-content {
+    background: #8B4513;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 20px 20px 5px 20px;
+    max-width: 80%;
+    margin-left: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chat-input-container {
+    padding: 1.5rem;
+    background: #f8f5f0;
+    border-top: 1px solid #e8dcc0;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e8dcc0;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#chatInput:focus {
+    border-color: #8B4513;
+}
+
+#sendButton {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#sendButton:hover {
+    background: #A0522D;
+}
+
+.input-info {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f5f0 0%, #e8dcc0 100%);
+}
+
+/* Centered Snarky Image */
+.pricing-snarky-centered {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.character-snarky-centered {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pricing-dialogue {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+/* Dialogue Row Layout */
+.dialogue-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.thump-row {
+    justify-content: flex-start;
+}
+
+.wynn-row {
+    justify-content: flex-end;
+}
+
+/* Inline Character Images */
+.character-inline {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.thump-inline {
+    order: 1;
+}
+
+.wynn-inline {
+    order: 2;
+}
+
+/* Dialogue Bubbles */
+.dialogue-bubble {
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 70%;
+}
+
+.thump-bubble {
+    background: #90EE90;
+    border-radius: 5px 20px 20px 20px;
+    order: 2;
+}
+
+.wynn-bubble {
+    background: #FFB6C1;
+    border-radius: 20px 5px 20px 20px;
+    order: 1;
+}
+
+.snarky-bubble {
+    background: #e8dcc0;
+    margin: 2rem auto 0;
+    max-width: 80%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.pricing-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.premium {
+    border: 3px solid #8B4513;
+    position: relative;
+}
+
+.pricing-card.premium::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8B4513;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8B4513;
+    margin: 1rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.pricing-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-card li:before {
+    content: '✓';
+    color: #8B4513;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.pricing-button {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-button:hover {
+    background: #A0522D;
+}
+
+.premium-button {
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+}
+
+/* Footer Section */
+.footer-section {
+    background: #2c1810;
+    color: #f8f5f0;
+    padding: 3rem 0 1rem;
+    text-align: center;
+}
+
+.footer-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.character-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.character-thumb {
+    text-align: center;
+}
+
+.character-thumb img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 3px solid #8B4513;
+}
+
+.character-thumb p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.character-thumb small {
+    color: #ccc;
+}
+
+.footer-links {
+    margin: 2rem 0;
+}
+
+.footer-links a {
+    color: #f8f5f0;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #8B4513;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close:hover {
+    color: #8B4513;
+}
+
+#emailForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#emailInput {
+    padding: 1rem;
+    border: 2px solid #e8dcc0;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#emailForm button {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-headline {
+        font-size: 2rem;
+    }
+    
+    .pricing-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .character-thumbnails {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    /* Mobile dialogue adjustments */
+    .dialogue-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .thump-row,
+    .wynn-row {
+        justify-content: center;
+    }
+    
+    .dialogue-bubble {
+        max-width: 90%;
+        text-align: center;
+    }
+    
+    .thump-bubble,
+    .wynn-bubble {
+        border-radius: 20px;
+        order: 2;
+    }
+    
+    .character-inline {
+        order: 1;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .chat-section,
+    .pricing-section {
+        padding: 2rem 0;
+    }
+    
+    .chat-messages {
+        height: 300px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #sendButton {
+        align-self: flex-end;
+        width: auto;
+    }
+    
+    .character-inline {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .character-snarky-centered {
+        width: 100px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: #8B4513;
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+}
+}* Please provide the content of your local assets/css/styles.css file so I can create or update it in the repository. */
