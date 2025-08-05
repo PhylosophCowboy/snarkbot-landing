@@ -1,13 +1,14 @@
-// Expose scrollToChat and sendMessage functions to the global scope
+// Latest version of assets/js/app.js
+// Fix: Expose scrollToChat and sendMessage functions to the global scope
+
 function scrollToChat() {
   // Implementation of scrollToChat
 }
 
-function sendMessage(message) {
+function sendMessage() {
   // Implementation of sendMessage
 }
 
-globalThis.scrollToChat = scrollToChat;
-globalThis.sendMessage = sendMessage;
-
-// Other existing code in app.js
+// Expose functions to global scope
+window.scrollToChat = scrollToChat;
+window.sendMessage = sendMessage;
