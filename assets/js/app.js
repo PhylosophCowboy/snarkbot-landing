@@ -1,19 +1,18 @@
-// Definitive fix for sendMessage function to resolve unresponsive button issue
-function sendMessage() {
-  const messageInput = document.getElementById('messageInput');
-  const message = messageInput.value.trim();
-  if (message === '') {
-    alert('Please enter a message.');
-    return;
-  }
-  // Disable the button to prevent multiple clicks
-  const sendButton = document.getElementById('sendButton');
-  sendButton.disabled = true;
+// Latest version of assets/js/app.js with new console.log statements for debugging button functionality
 
-  // Simulate sending message (e.g., via API call)
-  setTimeout(() => {
-    console.log('Message sent:', message);
-    messageInput.value = '';
-    sendButton.disabled = false;
-  }, 1000);
+// Example content with console.log for debugging
+console.log('Debug: Button functionality script loaded');
+
+// Your actual app.js content should be here
+// ...
+
+// Example button event listener with debug logs
+const button = document.querySelector('button');
+if(button) {
+  button.addEventListener('click', () => {
+    console.log('Button clicked');
+    // Additional button functionality
+  });
+} else {
+  console.log('Button not found');
 }
