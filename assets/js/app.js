@@ -1,26 +1,13 @@
-// Latest version of assets/js/app.js
-// This version includes the dynamic webhook call and removes the hardcoded responses
-
-// Example content (replace with actual latest content from workspace):
-
-function callWebhook(data) {
-  const webhookUrl = data.webhookUrl;
-  fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data.payload)
-  })
-  .then(response => response.json())
-  .then(result => {
-    console.log('Webhook call successful:', result);
-  })
-  .catch(error => {
-    console.error('Error calling webhook:', error);
-  });
+// Expose scrollToChat and sendMessage functions to the global scope
+function scrollToChat() {
+  // Implementation of scrollToChat
 }
 
-// Removed hardcoded responses
+function sendMessage(message) {
+  // Implementation of sendMessage
+}
 
-// Additional app.js code here...
+globalThis.scrollToChat = scrollToChat;
+globalThis.sendMessage = sendMessage;
+
+// Other existing code in app.js
