@@ -1,14 +1,19 @@
-// Latest version of assets/js/app.js
-// Fix: Expose scrollToChat and sendMessage functions to the global scope
-
-function scrollToChat() {
-  // Implementation of scrollToChat
-}
-
+// Definitive fix for sendMessage function to resolve unresponsive button issue
 function sendMessage() {
-  // Implementation of sendMessage
-}
+  const messageInput = document.getElementById('messageInput');
+  const message = messageInput.value.trim();
+  if (message === '') {
+    alert('Please enter a message.');
+    return;
+  }
+  // Disable the button to prevent multiple clicks
+  const sendButton = document.getElementById('sendButton');
+  sendButton.disabled = true;
 
-// Expose functions to global scope
-window.scrollToChat = scrollToChat;
-window.sendMessage = sendMessage;
+  // Simulate sending message (e.g., via API call)
+  setTimeout(() => {
+    console.log('Message sent:', message);
+    messageInput.value = '';
+    sendButton.disabled = false;
+  }, 1000);
+}
