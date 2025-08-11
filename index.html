@@ -1,36 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snarkbot Landing</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snarkbot - Discover What Makes You Extraordinary | School of Snark</title>
+<meta name="description" content="Meet Antknee B. Snarky and discover what makes you extraordinary through personality assessment conversations. Join the School of Snark community.">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Snarkbot</h1>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="features">
-        <h2>Features</h2>
-        <p>Snarkbot is your go-to AI assistant for witty comebacks and clever remarks.</p>
-    </section>
-    <section id="about">
-        <h2>About Snarkbot</h2>
-        <p>Created by PhylosophCowboy, Snarkbot aims to bring humor and intelligence to your conversations.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@snarkbot.com</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Snarkbot. All rights reserved.</p>
-    </footer>
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+<div class="container">
+<div class="hero-content">
+<div class="hero-image">
+<img src="assets/images/snark mugshot.png" alt="Antknee B. Snarky - Brown bear in worn dinner jacket" class="character-image">
+</div>
+<div class="hero-text">
+<h1 class="hero-headline">Well hello there, stranger!</h1>
+<p class="hero-subhead">I'm Antknee B. Snarky - Snark to my friends - and I've got a peculiar talent for helping folks discover something remarkable about themselves. Something they've probably been overlooking for years.</p>
+<p class="hero-hook">Most people go through life thinking they're pretty ordinary. But here's the thing - I've never met an <strong><em>ordinary</em></strong> person, no Sir'ee bob! Not once! Care to find out what makes you extraordinary?</p>
+<button class="cta-button" onclick="scrollToChat()">Let's Find Out!</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Chat Interface Section -->
+<section id="chat" class="chat-section">
+<div class="container">
+<div class="chat-container">
+<div class="chat-header">
+<img src="assets/images/snark mugshot.png" alt="Snarky" class="chat-avatar">
+<h2>Chat with Snarky</h2>
+<div class="timer-display" id="timerDisplay">Free conversation: 20:00</div>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="message snarky-message">
+<div class="message-content">
+<p>So, let's dive right in! When you're facing a tricky problem, do you feel that itch to jump right in and figure it out as you go? Or does something in you say 'whoa there, let's step back and look at the whole picture first'?</p>
+<p>I'm curious because it tells me a lot about how that fascinating mind of yours works...</p>
+</div>
+</div>
+</div>
+<div class="chat-input-container">
+<div class="input-group">
+<input type="text" id="chatInput" placeholder="Type your response here..." maxlength="1500">
+<button id="sendButton" onclick="sendMessage()">Send</button>
+</div>
+<div class="input-info">
+<span id="charCount">0/1500</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Pricing & School of Snark Section -->
+<section id="pricing" class="pricing-section">
+<div class="container">
+<!-- Centered Snarky Image -->
+<div class="pricing-snarky-centered">
+<img src="assets/images/snark mugshot.png" alt="Antknee B. Snarky" class="character-snarky-centered">
+</div>
+
+<div class="pricing-dialogue">
+<!-- Thump's first dialogue with his image -->
+<div class="dialogue-row thump-row">
+<img src="assets/images/thump 4.png" alt="Pompass J. Thump" class="character-inline thump-inline">
+<div class="dialogue-bubble thump-bubble">
+<p><strong>Thump:</strong> "Ladies and gentlemen, citizens of the internet! Having enjoyed your delightful conversation with our esteemed Mr. Snarky, you now face a most MAGNIFICENT opportunity!"</p>
+</div>
+</div>
+
+<!-- Wynn's first dialogue with her image -->
+<div class="dialogue-row wynn-row">
+<div class="dialogue-bubble wynn-bubble">
+<p><strong>Wynn:</strong> "Here we go..."</p>
+</div>
+<img src="assets/images/wynnefred final.png" alt="Wynnefred the Wolverine" class="character-inline wynn-inline">
+</div>
+
+<!-- Thump's second dialogue with his image -->
+<div class="dialogue-row thump-row">
+<img src="assets/images/thump 4.png" alt="Pompass J. Thump" class="character-inline thump-inline">
+<div class="dialogue-bubble thump-bubble">
+<p><strong>Thump:</strong> "For the modest sum of just $5 per month, you can continue these enlightening daily conversations with Snarky himself!"</p>
+</div>
+</div>
+
+<!-- Wynn's second dialogue with her image -->
+<div class="dialogue-row wynn-row">
+<div class="dialogue-bubble wynn-bubble">
+<p><strong>Wynn:</strong> "Rabbit stew for lunch sounds GREAT if you don't wrap this up, Thump!"</p>
+</div>
+<img src="assets/images/wynnefred final.png" alt="Wynnefred the Wolverine" class="character-inline wynn-inline">
+</div>
+
+<!-- Thump's third dialogue with his image -->
+<div class="dialogue-row thump-row">
+<img src="assets/images/thump 4.png" alt="Pompass J. Thump" class="character-inline thump-inline">
+<div class="dialogue-bubble thump-bubble">
+<p><strong>Thump:</strong> "But WAIT! There's MORE! For just $20 per month, you gain access to the entire School of Snark experience - educational resources, digital tools, AI agents for business development, AND your daily chats with Snarky!"</p>
+</div>
+</div>
+
+<!-- Snarky's final comment (centered) -->
+<div class="dialogue-bubble snarky-bubble">
+<p><strong>Snarky:</strong> "What our enthusiastic mayor is trying to say is, there's a whole community of folks discovering their unique value. Care to join us?"</p>
+</div>
+</div>
+
+<div class="pricing-options">
+<div class="pricing-card basic">
+<h3>Snarkbot Conversations</h3>
+<div class="price">$5<span>/month</span></div>
+<ul>
+<li>Daily conversations with Snarky</li>
+<li>Personality insights</li>
+<li>Email support</li>
+<li>Cancel anytime</li>
+</ul>
+<button class="pricing-button" onclick="selectPlan('basic')">Start Chatting</button>
+</div>
+<div class="pricing-card premium">
+<h3>Full School of Snark</h3>
+<div class="price">$20<span>/month</span></div>
+<ul>
+<li>Everything in Basic</li>
+<li>Educational resources</li>
+<li>Digital tools & AI agents</li>
+<li>Business development support</li>
+<li>Community access</li>
+</ul>
+<button class="pricing-button premium-button" onclick="selectPlan('premium')">Join the School</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer Section -->
+<footer id="footer" class="footer-section">
+<div class="container">
+<p class="footer-tagline">Brought to you by the residents of Stumpwood Village in the Forest of Shatwood</p>
+<div class="character-thumbnails">
+<div class="character-thumb">
+<img src="assets/images/snark mugshot.png" alt="Antknee B. Snarky">
+<p>Antknee B. Snarky<br><small>Wise Guide & Snark Master</small></p>
+</div>
+<div class="character-thumb">
+<img src="assets/images/wynnefred final.png" alt="Wynnefred">
+<p>Wynnefred<br><small>Cranky Best Friend</small></p>
+</div>
+<div class="character-thumb">
+<img src="assets/images/thump 4.png" alt="Pompass J. Thump">
+<p>Pompass J. Thump<br><small>Village Mayor</small></p>
+</div>
+</div>
+<div class="footer-links">
+<a href="#" onclick="showModal('privacy')">Privacy Policy</a>
+<a href="#" onclick="showModal('terms')">Terms of Service</a>
+<a href="https://schoolofsnark.xyz" target="_blank">Meet the whole gang at School of Snark</a>
+</div>
+<p class="copyright">&copy; 2024 School of Snark. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- Email Capture Modal -->
+<div id="emailModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('emailModal')">&times;</span>
+<h3>Join the Conversation!</h3>
+<p>Enter your email to get started with your chosen plan:</p>
+<form id="emailForm">
+<input type="email" id="emailInput" placeholder="your@email.com" required>
+<button type="submit">Continue to Payment</button>
+</form>
+</div>
+</div>
+
+<!-- Legal Modals -->
+<div id="privacyModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('privacyModal')">&times;</span>
+<h3>Privacy Policy</h3>
+<p>Your privacy is important to us. We collect minimal information necessary to provide our services...</p>
+</div>
+</div>
+
+<div id="termsModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('termsModal')">&times;</span>
+<h3>Terms of Service</h3>
+<p>By using our service, you agree to these terms...</p>
+</div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
