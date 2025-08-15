@@ -1,4 +1,16 @@
-// Content of assets/js/app-backup.js file from the workspace
-// (Assuming the content was retrieved and is now being used here to overwrite app.js)
+// Corrected app.js content with window.scrollToChat declaration and fixed function exposure
 
-// Please provide the content of assets/js/app-backup.js to proceed with the overwrite.
+(function() {
+  // Function to scroll to chat element
+  function scrollToChat() {
+    var chatElement = document.getElementById('chat');
+    if (chatElement) {
+      chatElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Expose the scrollToChat function to the global window object
+  window.scrollToChat = scrollToChat;
+
+  // Additional functions can be added here and exposed similarly if needed
+})();
