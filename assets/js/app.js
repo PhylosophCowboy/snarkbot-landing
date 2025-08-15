@@ -5,36 +5,27 @@
 // Example placeholder content:
 
 (function() {
-  // Chat initialization
-  function initChat() {
+  async function resilientChat() {
     try {
-      // Attempt primary API call
-      callPrimaryAPI();
-    } catch (e) {
-      console.error('Primary API failed, falling back:', e);
+      // Primary API call
+      let response = await fetch('/api/chat');
+      if (!response.ok) throw new Error('Primary API failed');
+      let data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Primary API failed, trying fallback', error);
       try {
         // Fallback API call
-        callFallbackAPI();
-      } catch (err) {
-        console.error('Fallback API also failed:', err);
-        showErrorMessage('Chat service is currently unavailable. Please try again later.');
+        let fallbackResponse = await fetch('/api/chat-fallback');
+        if (!fallbackResponse.ok) throw new Error('Fallback API failed');
+        let fallbackData = await fallbackResponse.json();
+        return fallbackData;
+      } catch (fallbackError) {
+        console.error('Fallback API also failed', fallbackError);
+        return { error: 'Chat service is currently unavailable. Please try again later.' };
       }
     }
   }
 
-  function callPrimaryAPI() {
-    // Implementation of primary API call
-  }
-
-  function callFallbackAPI() {
-    // Implementation of fallback API call
-  }
-
-  function showErrorMessage(msg) {
-    // Display error message to user
-    alert(msg);
-  }
-
-  // Initialize chat on page load
-  window.addEventListener('load', initChat);
+  window.resilientChat = resilientChat;
 })();
