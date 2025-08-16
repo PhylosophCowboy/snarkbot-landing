@@ -356,7 +356,66 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Add this function to handle sending requests to Pipedream
+async function sendToPipedream(userMessage, sessionId, conversationHistory) {
+    const pipedreamUrl = 'https://eohvty58iqq29fc.m.pipedream.net';
+    
+    const payload = {
+        message: userMessage,
+        session_id: sessionId,
+        user_id: sessionId, // Using session_id as user_id for now
+        conversation_history: conversationHistory,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch(pipedreamUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Pipedream request failed:', error);
+        return null;
+    }
+}
+
+// Updated callAITutorAPI function - replace your existing one
+async function callAITutorAPI(message, conversationHistory) {
+    // Generate or get session ID
+    let sessionId = sessionStorage.getItem('session_id');
+    if (!sessionId) {
+        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        sessionStorage.setItem('session_id', sessionId);
+    }
+
+    try {
+        // Call both backends in parallel
+        const [vercelResponse, pipedreamResponse] = await Promise.allSettled([
+            // Your existing Vercel call
+            fetch('https://school-of-snark.vercel.app/api/snarkbot/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    history: conversationHistory,
+                    agent: 'snarkbot'
+                })
+            })
+
 // Utility functions for future AI Tutor API integration
+/*
 async function callAITutorAPI(message, conversationHistory) {
     // This is the async function that calls the backend
     try {
@@ -384,6 +443,7 @@ async function callAITutorAPI(message, conversationHistory) {
         return "Well now, seems like I'm having a bit of trouble with my thoughts. Mind trying that again?";
     }
 }
+*/
 
 // Analytics tracking (placeholder)
 function trackEvent(eventName, properties = {}) {
