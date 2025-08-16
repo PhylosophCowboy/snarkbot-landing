@@ -357,6 +357,7 @@ function escapeHtml(text) {
 }
 
 // Add this function to handle sending requests to Pipedream
+/*
 async function sendToPipedream(userMessage, sessionId, conversationHistory) {
     const pipedreamUrl = 'https://eohvty58iqq29fc.m.pipedream.net';
     
@@ -413,9 +414,9 @@ async function callAITutorAPI(message, conversationHistory) {
                     agent: 'snarkbot'
                 })
             })
-
+*/
 // Utility functions for future AI Tutor API integration
-/*
+
 async function callAITutorAPI(message, conversationHistory) {
     // This is the async function that calls the backend
     try {
@@ -443,7 +444,7 @@ async function callAITutorAPI(message, conversationHistory) {
         return "Well now, seems like I'm having a bit of trouble with my thoughts. Mind trying that again?";
     }
 }
-*/
+
 
 // Analytics tracking (placeholder)
 function trackEvent(eventName, properties = {}) {
