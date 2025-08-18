@@ -356,39 +356,6 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Add this function to handle sending requests to Pipedream
-/*
-async function sendToPipedream(userMessage, sessionId, conversationHistory) {
-    const pipedreamUrl = 'https://eohvty58iqq29fc.m.pipedream.net';
-    
-    const payload = {
-        message: userMessage,
-        session_id: sessionId,
-        user_id: sessionId, // Using session_id as user_id for now
-        conversation_history: conversationHistory,
-        timestamp: new Date().toISOString()
-    };
-
-    try {
-        const response = await fetch(pipedreamUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Pipedream request failed:', error);
-        return null;
-    }
-}
 
 // Updated callAITutorAPI function - replace your existing one
 async function callAITutorAPI(message, conversationHistory) {
