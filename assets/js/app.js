@@ -356,8 +356,8 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-
 // Updated callAITutorAPI function - replace your existing one
+/*
 async function callAITutorAPI(message, conversationHistory) {
     // Generate or get session ID
     let sessionId = sessionStorage.getItem('session_id');
@@ -382,8 +382,8 @@ async function callAITutorAPI(message, conversationHistory) {
                 })
             })
 */
-// Utility functions for future AI Tutor API integration
 
+// Utility functions for future AI Tutor API integration
 async function callAITutorAPI(message, conversationHistory) {
     // This is the async function that calls the backend
     try {
