@@ -2,6 +2,8 @@
 
 // Snarkbot Landing Page JavaScript
 
+//Getting Snarky working - we hope
+
 // Global variables
 let conversationTimer = 30 * 60; // 30 minutes in seconds
 let timerInterval;
